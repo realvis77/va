@@ -21,7 +21,7 @@ local Admin = {
 -- >> Discord: https://discord.gg/GbgtPjwbQe
 _G.Config = { ["Theme"] = "Dark" }
 local Nord = loadstring(game:HttpGetAsync("https://scripts.nord.vip/NordNotifs.lua", true))();
-Nord:Notify(nil, "welcome", "success", 5);
+Nord:Notify("Volant Admin", "Welcome", "success", 4);
 
 
 function DeltaWait(n)
@@ -916,7 +916,7 @@ AddCommand("cmds",function()
 	mainFrame.BorderColor3 = Color3.new(0,0,0)
 	mainFrame.BackgroundColor3 = Color3.fromRGB(70, 70, 73)
 	mainFrame.Position = UDim2.new(0.457241982, 0, 0.301098913, 0)
-	mainFrame.Size = UDim2.new(0, 207, 0, 324)
+	mainFrame.Size = UDim2.new(0, 217, 0, 361)
 	local script = Instance.new('LocalScript', mainFrame)
 
 
@@ -1015,7 +1015,7 @@ mainFrame:TweenPosition(UDim2.new(0,0,0.3,0), Enum.EasingDirection.In, Enum.Easi
 		command.TextXAlignment = Enum.TextXAlignment.Center
 		command.Text = i
 		command.TextColor3 = Color3.fromRGB(255, 255, 255)
-		command.TextSize = 18.000
+		command.TextSize = 19.000
 		cmdnum = 1
 	end
 end)
@@ -1234,7 +1234,7 @@ AddCommand("hwid",function()
     
 end)
 
-AddCommand("kill",function()
+AddCommand("lkill",function()
 	for _, Target in pairs(GetPlayer(args[2])) do
 		local oldCF = LocalPlayer.Character.HumanoidRootPart.CFrame
 		local Players = game:GetService("Players")
@@ -1306,16 +1306,8 @@ AddCommand("equipt", function()
         end
 end)
 
-AddCommand('lkill', function()
+AddCommand('kill', function()
 	workspace['FallenPartsDestroyHeight'] = 0/0
-	local Players = game:GetService("Players")
-    local Player = Players.LocalPlayer
-    local Character = Player.Character
-    local Humanoid = Character:WaitForChild("Humanoid")
-    local HRoot = Character:WaitForChild("HumanoidRootPart")
-    local RunService = game:GetService("RunService")
-    local function Leg()Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false) Humanoid.Sit = true local character = Character;character:WaitForChild("LeftLowerLeg"):WaitForChild("LeftKneeRigAttachment"):WaitForChild("OriginalPosition"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("LeftKneeRigAttachment"):WaitForChild("OriginalPosition"):Destroy()character:WaitForChild("LeftLowerLeg"):WaitForChild("LeftKneeRigAttachment"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("LeftKneeRigAttachment"):Destroy()character:WaitForChild("LeftFoot"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("LeftLowerLeg"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("Humanoid"):WaitForChild("BodyTypeScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyProportionScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyWidthScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyHeightScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyDepthScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("HeadScale"):Destroy() end
-    Leg()
 	LocalPlayer.Character.Humanoid:UnequipTools()
 	local oldCF = LocalPlayer.Character.HumanoidRootPart.CFrame
 	DeltaWait()
@@ -2311,10 +2303,10 @@ AddCommand("antifling",function()
 end)
 end)
 
-AddCommand("dmkill",function()
+AddCommand("mkill",function()
     local KT = {
     Mass = true, -- uses mass to kill
-    Delay = true, -- waits like 5 seconds before killing
+    Delay = false, -- waits like 5 seconds before killing
     Normal = false, -- idk what this is
     Target = args[2] -- user here | displaynames might or might not work
 }
@@ -2679,7 +2671,7 @@ AddCommand("credits",function()
 -- >> Discord: https://discord.gg/GbgtPjwbQe
 _G.Config = { ["Theme"] = "Dark" }
 local Nord = loadstring(game:HttpGetAsync("https://scripts.nord.vip/NordNotifs.lua", true))();
-Nord:Notify(nil, "vision, Gon", "success", 4);
+Nord:Notify("Credits", "vision, Gon", "success", 3);
 end)
 
 AddCommand("day",function()
@@ -2735,11 +2727,11 @@ AddCommand("antit", function()
 		 end)
 end)
 
-AddCommand("void2",function()
+AddCommand("mvoid",function()
     getgenv().Options = {
     ["Main"] = {
         ["Target"] = args[2],
-        ["LineForce"] = false,
+        ["LineForce"] = true,
         ["Loop"] = false,
     },
     ["Settings"] = {
@@ -3179,4 +3171,283 @@ end)
 AddCommand("fov",function()
     local fov = args[2]
     game:GetService("Workspace").CurrentCamera.FieldOfView = fov
+end)
+
+AddCommand("void2",function()
+    getgenv().Options = {
+    ["Main"] = {
+        ["Target"] = args[2],
+        ["LineForce"] = true,
+        ["Loop"] = false,
+    },
+    ["Settings"] = {
+        ["Distance"] = -10000,
+        ["Mode"] = "n",
+        ["wait"] = true,
+        ["UseGrip"] = true,
+    },
+} -- Modes: N (Normal) / L (Leg) / R (All) / F (Fat) / FR (Fast Rescale)
+
+local Players = game:GetService("Players")
+local Player = Players.LocalPlayer
+local Character = Player.Character
+local Humanoid = Character:WaitForChild("Humanoid")
+local HRoot = Character:WaitForChild("HumanoidRootPart")
+local RunService = game:GetService("RunService")
+
+--//FR
+local function Rescale()Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)Humanoid.Sit=true;local function wipe_parts()for _,part in pairs(character:GetDescendants())do if part:IsA("BasePart")and part.Name~="Head"then for _,attachment in pairs(part:GetDescendants())do if attachment:IsA("Attachment")and attachment:FindFirstChild("OriginalPosition")then attachment.OriginalPosition:Destroy()end end;part:WaitForChild("OriginalSize"):Destroy()end end end;wipe_parts()Humanoid:WaitForChild("BodyTypeScale"):Destroy()wipe_parts()Humanoid:WaitForChild("BodyWidthScale"):Destroy()wipe_parts()Humanoid:WaitForChild("BodyDepthScale"):Destroy()wipe_parts()Humanoid:WaitForChild("HeadScale"):Destroy()if Character.RightFoot:FindFirstChild("OriginalSize")then Character:WaitForChild("RightFoot").OriginalSize:Destroy()Character:WaitForChild("RightLowerLeg").OriginalSize:Destroy()Character:WaitForChild("RightUpperLeg").OriginalSize:Destroy()end end
+--//Fat
+local function Fat()Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)Humanoid.Sit=true;function delete()Character:WaitForChild("LeftFoot"):WaitForChild'OriginalSize':Destroy()end;local function makeNew()local thing=Instance.new('Vector3Value',Character:WaitForChild("LeftFoot"))thing.Name='OriginalSize'local thing=Instance.new('Vector3Value',Character:WaitForChild("LeftLowerLeg"))thing.Name='OriginalSize'local thing=Instance.new('Vector3Value',Character:WaitForChild("LeftUpperLeg"))thing.Name='OriginalSize'end;if Humanoid.RigType==Enum.HumanoidRigType.R15 then for i,v in next,Humanoid:GetChildren()do if v:IsA'NumberValue'then delete()v:Destroy()makeNew()end end else print("Error:",'Command is R15 only!')end end
+--//Head
+local function Head()Humanoid:SetStateEnabled("Seated",false)Humanoid.Sit=true;for _,v in pairs(Humanoid:GetChildren())do if string.find(v.Name,"Scale")then RunService.Heartbeat:wait()Character:FindFirstChild("Head").OriginalSize:Destroy()v:Destroy()Character:FindFirstChild("Head"):WaitForChild("OriginalSize")end end end
+--//Leg
+local function Leg()Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated, false) Humanoid.Sit = true local character = Character;character:WaitForChild("LeftLowerLeg"):WaitForChild("LeftKneeRigAttachment"):WaitForChild("OriginalPosition"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("LeftKneeRigAttachment"):WaitForChild("OriginalPosition"):Destroy()character:WaitForChild("LeftLowerLeg"):WaitForChild("LeftKneeRigAttachment"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("LeftKneeRigAttachment"):Destroy()character:WaitForChild("LeftFoot"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("LeftLowerLeg"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("LeftUpperLeg"):WaitForChild("OriginalSize"):Destroy()character:WaitForChild("Humanoid"):WaitForChild("BodyTypeScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyProportionScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyWidthScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyHeightScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("BodyDepthScale"):Destroy()character.LeftFoot:WaitForChild("OriginalSize"):Destroy()character.LeftLowerLeg:WaitForChild("OriginalSize"):Destroy()character.LeftUpperLeg:WaitForChild("OriginalSize"):Destroy()character.Humanoid:WaitForChild("HeadScale"):Destroy() end
+--//Reall
+local function reall()local Settings={Values={BodyTypeScale=true;BodyProportionScale=true;BodyWidthScale=true;BodyHeightScale=true;BodyDepthScale=true;HeadScale=true};OriginalSize=true;OriginalPosition=false}Humanoid:SetStateEnabled(Enum.HumanoidStateType.Seated,false)Humanoid.Sit=true;local WaitFunc=function(x)x.DescendantAdded:wait()task.wait()end;if Humanoid.RigType==Enum.HumanoidRigType.R6 then return end;Character.LeftUpperLeg.LeftKneeRigAttachment:Destroy()Character.LeftLowerLeg.LeftAnkleRigAttachment:Destroy()Character.LeftFoot.LeftFootAttachment:Destroy()for _,x in next,Settings.Values do if x then if Settings.OriginalSize then for _,_os in next,Character:GetDescendants()do if _os.Name=="OriginalSize"and _os:IsA("ValueBase")then _os:Destroy()end end end;if Settings.OriginalPosition then for _,_op in next,Character:GetDescendants()do if _op.Name=="OriginalPosition"and _op:IsA("ValueBase")then _op:Destroy()end end end;if Humanoid:FindFirstChild(tostring(_))then Humanoid:FindFirstChild(tostring(_)):Destroy()end;WaitFunc(Character)end end end
+
+local function Res()
+    local Selected = getgenv().Options.Settings.Mode:lower()
+    if Selected == "l" then
+        Leg() wait(.5)
+    elseif Selected == "h" then
+        Head() wait(.2)
+    elseif Selected == "r" then
+        reall()
+    elseif Selected == "f" then
+        Fat() wait(.2)
+    elseif Selected == "fr" then
+        Rescale() wait(.2)
+    end
+end
+
+local function Destroy()
+    local Attachment0 = Instance.new("Attachment", Character:WaitForChild("UpperTorso"))
+    local Attachment1 = Instance.new("Attachment", Character:WaitForChild("RightHand"))
+    local ol = Instance.new("HingeConstraint", Character:WaitForChild("UpperTorso"))
+    ol.Attachment0 = Attachment0
+    ol.Attachment1 = Attachment1
+    ol.LimitsEnabled = true
+    ol.LowerAngle = 0
+    ol.Restitution = 0
+    ol.UpperAngle = 0
+    Attachment1.CFrame = CFrame.new(0.5, 2, 1)
+    Attachment0.CFrame = CFrame.new(0, 0, 0) 
+end
+
+local function GetPlayer(Name)
+    Name = Name:lower():gsub(" ","") or ""
+    for _,x in next, Players:GetPlayers() do
+        if x ~= Player then
+            if x.Name:lower():match("^"..Name) then
+                return x
+            elseif x.DisplayName:lower():match("^"..Name) then
+                return x
+            end
+        end
+    end
+end
+
+local Target = GetPlayer(getgenv().Options.Main.Target)
+local TC = Target.Character
+local TH = TC:WaitForChild("Humanoid")
+local TP = TC:WaitForChild("HumanoidRootPart").CFrame
+local Old = HRoot.CFrame
+local Tools = {}
+
+game.workspace.FallenPartsDestroyHeight = 0/0
+if getgenv().Options.Settings.wait then
+    local Char = Player.Character
+    Player.Character = Clone
+    Player.Character = Char
+    wait(4.9)
+end
+Res()
+
+HRoot.CFrame = TP
+Character:SetPrimaryPartCFrame(TP)
+
+local NewHum = Humanoid:Clone()
+Humanoid:Destroy()
+NewHum.Parent = Character
+
+table.foreach(Player.Backpack:GetChildren(), function(_, x)
+    x.Parent = Character
+    if x:FindFirstChild("Handle") then
+        table.insert(Tools, x)
+    end
+end)
+
+if getgenv().Options.Settings.UseGrip then
+    for _,v in pairs(Character:GetChildren()) do
+        if v:IsA("Tool") then
+            v.GripPos = Vector3.new(0, game.workspace.FallenPartsDestroyHeight + 100, 0)
+        end
+    end
+end
+
+Character:WaitForChild("Humanoid"):SetStateEnabled("FallingDown", false)
+workspace.CurrentCamera.CameraSubject = Target.Character:WaitForChild("Humanoid")
+
+HRoot.AssemblyLinearVelocity = HRoot.AssemblyLinearVelocity + Vector3.new(0,getgenv().Options.Settings.Distance,0) 
+
+HRoot.CFrame = CFrame.new(0, getgenv().Options.Settings.Distance, 0)
+Character:SetPrimaryPartCFrame(CFrame.new(0, getgenv().Options.Settings.Distance, 0))
+
+local Mass = 0
+for _,v in pairs(Character:GetDescendants()) do
+    if v:IsA("BasePart") then Mass = Mass + v.AssemblyMass end
+end
+
+if getgenv().Options.Main.LineForce then
+    local PrimaryPart = Character.PrimaryPart
+    local LineForce = Instance.new("LineForce", PrimaryPart) 
+    local DestinationPart = Instance.new("Part", workspace)
+    
+    local AT0, AT1 = Instance.new("Attachment", PrimaryPart), Instance.new("Attachment", DestinationPart)
+    AT0["Position"] = Vector3.new(0, getgenv().Options.Settings.Distance, 0); AT1["Position"] = Vector3.new(0, getgenv().Options.Settings.Distance, 0) 
+    LineForce["Attachment0"] = AT0; LineForce["Attachment1"] = AT1;
+    
+    DestinationPart["Anchored"] = true
+    LineForce["InverseSquareLaw"] = false 
+    LineForce["ApplyAtCenterOfMass"] = true
+    LineForce["Magnitude"] = 1e4
+    LineForce["MaxForce"] = 1e2 + math.floor(Mass)
+    LineForce["ReactionForceEnabled"] = false
+    LineForce["Enabled"] = true
+end
+if getgenv().Options.Main.Loop then
+    coroutine.wrap(function()
+        for i = 1,5 do wait() end
+        workspace.FallenPartsDestroyHeight = -500
+        wait(.2)
+        if Target.Character:WaitForChild("Humanoid").Health > 0 then
+            table.foreach(NewHum:GetAccessories(), function(_, x)
+                if x:FindFirstChild("Handle") then
+                    x.Handle:Destroy()
+                end
+            end)
+            Character = Character:Destroy()
+        end
+    end)()
+else
+    coroutine.wrap(function()
+        for i = 1,2 do wait() end
+        workspace.FallenPartsDestroyHeight = -500
+        wait(.1)
+        if Target.Character:WaitForChild("Humanoid").Health > 0 then
+            table.foreach(NewHum:GetAccessories(), function(_, x)
+                if x:FindFirstChild("Handle") then
+                    x.Handle:Destroy()
+                end
+            end)
+            Character = Character:Destroy()
+        end
+    end)()
+end
+for _,v in ipairs(Tools) do
+    firetouchinterest(TH.RootPart, v.Handle, 0)
+    firetouchinterest(TH.RootPart, v.Handle, 1)
+end
+Player.CharacterAdded:wait()
+Player.Character:WaitForChild("HumanoidRootPart").CFrame = Old
+Player.Character:WaitForChild("ForceField"):Destroy()
+
+Player.CharacterAdded:Connect(function(character)
+    wait(.8)
+    if getgenv().Options.Main.Loop == true then
+        local Target = GetPlayer(getgenv().Options.Main.Target)
+        local TC = Target.Character
+        local TH = TC:WaitForChild("Humanoid")
+        local TP = TC:WaitForChild("HumanoidRootPart").CFrame
+        Character = character
+        Humanoid = Character:WaitForChild("Humanoid")
+        HRoot = Humanoid.RootPart
+        local Old = HRoot.CFrame
+        local Tools2 = {}
+        
+        game.workspace.FallenPartsDestroyHeight = 0/0
+        if getgenv().Options.Settings.wait then
+            local Char = Player.Character
+            Player.Character = Clone
+            Player.Character = Char
+            wait(4.9)
+        end
+        Res()
+        
+        HRoot.CFrame = TP
+        Character:SetPrimaryPartCFrame(TP)
+        
+        local NewHum = Humanoid:Clone()
+        Humanoid:Destroy()
+        NewHum.Parent = Character
+        
+        table.foreach(Player.Backpack:GetChildren(), function(_, x)
+            x.Parent = Character
+            if x:FindFirstChild("Handle") then
+                table.insert(Tools2, x)
+            end
+        end)
+        
+        if getgenv().Options.Settings.UseGrip then
+            for _,v in pairs(Character:GetChildren()) do
+                if v:IsA("Tool") then
+                    v.GripPos = Vector3.new(0, game.workspace.FallenPartsDestroyHeight + 100, 0)
+                end
+            end
+        end
+        
+        Character:WaitForChild("Humanoid"):SetStateEnabled("FallingDown", false)
+        workspace.CurrentCamera.CameraSubject = Target.Character:WaitForChild("Humanoid")
+        
+        HRoot.AssemblyLinearVelocity = HRoot.AssemblyLinearVelocity + Vector3.new(0,getgenv().Options.Settings.Distance,0) 
+        
+        HRoot.CFrame = CFrame.new(0, getgenv().Options.Settings.Distance, 0)
+        Character:SetPrimaryPartCFrame(CFrame.new(0, getgenv().Options.Settings.Distance, 0))
+        
+        local Mass = 0
+        for _,v in pairs(Character:GetDescendants()) do
+            if v:IsA("BasePart") then Mass = Mass + v.AssemblyMass end
+        end
+        
+        if getgenv().Options.Main.LineForce then
+            local PrimaryPart = Character.PrimaryPart
+            local LineForce = Instance.new("LineForce", PrimaryPart) 
+            local DestinationPart = Instance.new("Part", workspace)
+            
+            local AT0, AT1 = Instance.new("Attachment", PrimaryPart), Instance.new("Attachment", DestinationPart)
+            AT0["Position"] = Vector3.new(0, getgenv().Options.Settings.Distance, 0); AT1["Position"] = Vector3.new(0, getgenv().Options.Settings.Distance, 0) 
+            LineForce["Attachment0"] = AT0; LineForce["Attachment1"] = AT1;
+            
+            DestinationPart["Anchored"] = true
+            LineForce["InverseSquareLaw"] = false 
+            LineForce["ApplyAtCenterOfMass"] = true
+            LineForce["Magnitude"] = 1e4
+            LineForce["MaxForce"] = 1e2 + math.floor(Mass)
+            LineForce["ReactionForceEnabled"] = false
+            LineForce["Enabled"] = true
+        end
+        
+        coroutine.wrap(function()
+            for i = 1,1 do wait(.1) end
+            workspace.FallenPartsDestroyHeight = -500
+            task.wait(.1)
+            if Target.Character:WaitForChild("Humanoid").Health > 0 then
+                table.foreach(NewHum:GetAccessories(), function(_, x)
+                    if x:FindFirstChild("Handle") then
+                        x.Handle:Destroy()
+                    end
+                end)
+                Character = Character:Destroy()
+            end
+        end)()
+        for _,v in ipairs(Tools2) do
+            firetouchinterest(TH.RootPart, v.Handle, 0)
+            firetouchinterest(TH.RootPart, v.Handle, 1)
+        end
+        Player.CharacterAdded:wait()
+        Player.Character:WaitForChild("HumanoidRootPart").CFrame = Old
+        Player.Character:WaitForChild("ForceField"):Destroy()
+    end
+end)
 end)
